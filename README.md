@@ -14,8 +14,8 @@ Nova feature: feature/nome-da-feature
 Correção de bug: fix/nome-do-bug
 
 ## DESCR
--Caminhão: cada um possui código, nome único, autonomia e o valor do custo por km rodado.//arquivo csv armazenando atributos do caminhao
--Frota: Armazena caminhões marcando assim uma frota.//funções lambda para calcular capacidade prota.* list.stream().forEach(n -> {aux += n.getCapacidade;});*
+- Caminhão: cada um possui código, nome único, autonomia e o valor do custo por km rodado.//arquivo csv armazenando atributos do caminhao
+- Frota: Armazena caminhões marcando assim uma frota.//funções lambda para calcular capacidade prota.* list.stream().forEach(n -> {aux += n.getCapacidade;});*
 - Destino: possui um código, um nome e a cidade.
 - Cliente: possui um código, um nome e um número de telefone.
 - Carga: um código único, tipo de carga, local de origem, local de destino, cliente, peso (toneladas), o
