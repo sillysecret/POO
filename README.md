@@ -14,7 +14,8 @@ Nova feature: feature/nome-da-feature
 Correção de bug: fix/nome-do-bug
 
 ## DESCR
-Caminhões (frota): cada um possui código, nome único, autonomia e o valor do custo por km rodado.
+-Caminhão: cada um possui código, nome único, autonomia e o valor do custo por km rodado.//
+-Frota: Armazena caminhões marcando assim uma frota.//funções lambda para calcular capacidade prota.
 - Destino: possui um código, um nome e a cidade.
 - Cliente: possui um código, um nome e um número de telefone.
 - Carga: um código único, tipo de carga, local de origem, local de destino, cliente, peso (toneladas), o
