@@ -14,7 +14,7 @@ Nova feature: feature/nome-da-feature
 Correção de bug: fix/nome-do-bug
 
 ## DESCR
--Caminhão: cada um possui código, nome único, autonomia e o valor do custo por km rodado.//
+-Caminhão: cada um possui código, nome único, autonomia e o valor do custo por km rodado.//arquivo csv armazenando atributos do caminhao
 -Frota: Armazena caminhões marcando assim uma frota.//funções lambda para calcular capacidade prota.
 * list.stream().forEach(n -> {
                aux += n.getCapacidade;
@@ -57,7 +57,7 @@ se a carga estiver na situação FINALIZADO, não pode ser alterado e mostra uma
 erro]).
 - Carregar dados iniciais: carrega os dados num arquivo para o sistema; as cargas devem ser
 carregadas em uma fila de cargas pendentes; ao final da carga de dados, mostra todos os dados
-de destinos, caminhões, clientes, cargas. O formato do arquivo é de livre escolha.
+de destinos, caminhões, clientes, cargas. O formato do arquivo é de livre escolha.//arquio csv com cargas passando atributos da carga e dando enqueue
 - Fretar cargas: a partir da fila de cargas pendentes, verifica se é possível designar algum
 caminhão disponível para cada carga, e atualiza a sua situação. Se há algum caminhão com
 capacidade de fazer o frete, mas já está designado para outra carga, a carga retorna para a fila
