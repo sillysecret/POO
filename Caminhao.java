@@ -52,7 +52,7 @@ public class Caminhao {
         + "\nVelocidade: " + velocidade
         + "\nAutonomia: " + autonomia
         + "\nCusto por Km: " + custoPorKm
-        + "\nCodigo: " + codigo;
+        + "\nCodigo: " + codigo + "fim";
     }
     
     
