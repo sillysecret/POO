@@ -1,14 +1,20 @@
 public class Carga {
-    protected int codigo;
-    protected int peso;
-    protected double valorDeclarado;
-    protected int tempoMaximo;
+    private int codigo;
+    private int peso;
+    private double valorDeclarado;
+    private int tempoMaximoFrete;
+    private TipoCarga carga;
+    private Cliente cliente; 
+    private Situacoes situacao;
 
-    public Carga(int codigo, int peso, double valorDeclarado, int tempoMaximo) {
+    public Carga(int codigo, int peso, double valorDeclarado, int tempoMaximoFrete, TipoCarga carga, Cliente cliente, Situacoes situacao) {
         this.codigo = codigo;
         this.peso = peso;
         this.valorDeclarado = valorDeclarado;
-        this.tempoMaximo = tempoMaximo;
+        this.tempoMaximoFrete = tempoMaximoFrete;
+        this.carga = carga;
+        this.cliente = cliente;
+        this.situacao = situacao;
     }
 
     public int getCodigo() {
@@ -21,7 +27,7 @@ public class Carga {
         return valorDeclarado;
     }
     public int getTempoMaximo() {
-        return tempoMaximo;
+        return tempoMaximoFrete;
     }
 
     public void setCodigo(int codigo) {
@@ -34,7 +40,7 @@ public class Carga {
         this.valorDeclarado = valorDeclarado;
     }
     public void setTempoMaximo(int tempoMaximo) {
-        this.tempoMaximo = tempoMaximo;
+        this.tempoMaximoFrete = tempoMaximo;
     }
 
     public String toString() {
@@ -42,6 +48,8 @@ public class Carga {
         + "\nCódigo: " + codigo
         + "\nPeso: " + peso 
         + "\nValor declarado: " + valorDeclarado
-        + "\nTempo Maximo: " + tempoMaximo;
+        + "\nTempo Maximo: " + tempoMaximoFrete
+        + "\nTipo da Carga: " + carga.toString();
     }
+
 }
