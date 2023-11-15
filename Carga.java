@@ -6,8 +6,9 @@ public class Carga {
     private TipoCarga carga;
     private Cliente cliente; 
     private Situacoes situacao;
+    private Destino destino;
 
-    public Carga(int codigo, int peso, double valorDeclarado, int tempoMaximoFrete, TipoCarga carga, Cliente cliente, Situacoes situacao) {
+    public Carga(int codigo, int peso, double valorDeclarado, int tempoMaximoFrete, TipoCarga carga, Cliente cliente, Situacoes situacao,Destino destino) {
         this.codigo = codigo;
         this.peso = peso;
         this.valorDeclarado = valorDeclarado;
@@ -15,6 +16,7 @@ public class Carga {
         this.carga = carga;
         this.cliente = cliente;
         this.situacao = situacao;
+        this.destino = destino;
     }
 
     public int getCodigo() {
@@ -41,6 +43,10 @@ public class Carga {
     }
     public void setTempoMaximo(int tempoMaximo) {
         this.tempoMaximoFrete = tempoMaximo;
+    }
+
+    public TipoCarga getTipoCarga() {
+       return this.carga;
     }
 
     public String toString() {
