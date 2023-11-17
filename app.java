@@ -11,7 +11,7 @@ public class app {
 
         Caminhao caminhao1 = new Caminhao("Caminhão 1", 100, 1000, 10, 1);
 
-
+        new API().setRequestMethod();
 
     }
 
