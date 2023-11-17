@@ -17,7 +17,7 @@ public class API {
         HttpRequest request = HttpRequest.newBuilder()
           .GET()
           .timeout(Duration.ofSeconds(10))
-          .uri(URI.create("https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood&key=AIzaSyCVdUBvL4qKPFp5XgGcYwW3P6OtlrqJ0i4"))
+          .uri(URI.create("https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood&key=KEY"))
           .build();
         
           HttpResponse<String> response;
