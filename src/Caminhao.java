@@ -1,3 +1,4 @@
+package src;
 public class Caminhao {
     private String nome;
     private double velocidade;

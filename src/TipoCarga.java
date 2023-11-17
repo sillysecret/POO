@@ -1,3 +1,4 @@
+package src;
 public abstract class TipoCarga {
 
     private int numero;

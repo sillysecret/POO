@@ -1,3 +1,4 @@
+package src;
 public class TipoCargaDuravel extends TipoCarga{
 //Durável: que possui um setor (String) e o material principal (String)
 

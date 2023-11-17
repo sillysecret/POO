@@ -1,3 +1,4 @@
+package src;
 public class app {
     public static void main(String[] args) {
         Cliente cliente1 = new Cliente(1, "João", "999999999");

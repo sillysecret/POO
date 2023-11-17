@@ -1,4 +1,5 @@
-public class Carga {
+package src;
+public class Carga{
     private int codigo;
     private int peso;
     private double valorDeclarado;
