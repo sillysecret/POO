@@ -1,4 +1,4 @@
-package src;
+
 public class TipoCargaPerecivel extends TipoCarga{
     public String origem;
     public int tempoMaximo;

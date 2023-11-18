@@ -1,4 +1,4 @@
-package src;
+
 public class Destino {
     private int cod;
     private String nomeCidade;

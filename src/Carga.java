@@ -1,4 +1,4 @@
-package src;
+
 public class Carga{
     private int codigo;
     private int peso;
@@ -9,7 +9,9 @@ public class Carga{
     private Situacoes situacao;
     private Destino destino;
 
-    public Carga(int codigo, int peso, double valorDeclarado, int tempoMaximoFrete, TipoCarga carga, Cliente cliente, Situacoes situacao,Destino destino) {
+    private Destino origem;
+
+    public Carga(int codigo, int peso, double valorDeclarado, int tempoMaximoFrete, TipoCarga carga, Cliente cliente, Situacoes situacao,Destino destino,Destino origem) {
         this.codigo = codigo;
         this.peso = peso;
         this.valorDeclarado = valorDeclarado;
@@ -18,6 +20,7 @@ public class Carga{
         this.cliente = cliente;
         this.situacao = situacao;
         this.destino = destino;
+        this.origem=origem;
     }
 
     public int getCodigo() {

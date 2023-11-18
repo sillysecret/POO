@@ -1,4 +1,4 @@
-package src;
+
 public class app {
     public static void main(String[] args) {
         Cliente cliente1 = new Cliente(1, "João", "999999999");
@@ -6,7 +6,7 @@ public class app {
         
         Carga carga1 = new Carga(1, 100, 1000, 10, 
         new TipoCargaDuravel(1, "Carga durável", "Setor 1", "Material 1"), 
-        cliente1, Situacoes.Pendente,new Destino( 1000,"São Paulo"));
+        cliente1, Situacoes.Pendente,new Destino( 1000,"São Paulo"),new Destino( 1000,"Rio de janeiro"));
 
     
 

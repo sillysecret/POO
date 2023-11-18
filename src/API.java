@@ -1,4 +1,4 @@
-package src;
+
 
 import java.io.IOException;
 import java.net.URI;
@@ -12,12 +12,12 @@ import org.json.JSONObject;
 
 
 public class API {
-    public void setRequestMethod() {
+    public double setRequestMethod() {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
           .GET()
           .timeout(Duration.ofSeconds(10))
-          .uri(URI.create("https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood&key=KEY"))
+          .uri(URI.create("https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood&key=AIzaSyCVdUBvL4qKPFp5XgGcYwW3P6OtlrqJ0i4"))
           .build();
         
           HttpResponse<String> response;
@@ -28,12 +28,14 @@ public class API {
 
 
               JSONObject object = new JSONObject (dados.toString());
-              System.out.println(dados.toString());
-              object = new JSONObject (object.get("routes").toString());
-              object = new JSONObject (object.get("legs").toString());
-              System.out.println(object.toString());
+              JSONArray routes = object.getJSONArray("routes");
+              JSONObject routesObject = routes.getJSONObject(0);
+              JSONArray legs = routesObject.getJSONArray("legs");
+              JSONObject legsObject = legs.getJSONObject(0);
+              JSONObject Distancedata = legsObject.getJSONObject("distance");
+              Double meters = Distancedata.getDouble("value");
 
-
+              return meters/1000;
           } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -42,7 +44,7 @@ public class API {
             e.printStackTrace();
           }
             
-
+            return -1;
            
           }
         }
