@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class app {
     public static void main(String[] args) {
@@ -12,15 +13,17 @@ public class app {
 
         Caminhao caminhao1 = new Caminhao("Caminhão 1", 100, 1000, 10, 1);
 
-        new API().setRequestMethod();
-
+        frete(caminhao1,carga1);
     }
 
     public static void frete(Caminhao caminhao, Carga carga) {
         //preco do peso da carga || carga.getTipoCarga().getPrecoPorPeso(carga.getPeso())
-        //preco destino || caminhao.getCustoPorKm * 
+        //preco destino || caminhao.getCustoPorKm * new API().setRequestMethod(carga);
 
+        System.out.println(caminhao.getCustoPorKm());
 
-        System.out.println(+carga.getTipoCarga().getPrecoPorPeso(carga.getPeso()));
+        System.out.println(carga.getTipoCarga().getPrecoPorPeso(carga.getPeso()));
+
+        System.out.println((caminhao.getCustoPorKm() * new API().setRequestMethod(carga)) + (carga.getTipoCarga().getPrecoPorPeso(carga.getPeso())));
     }
 }

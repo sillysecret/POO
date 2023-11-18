@@ -8,16 +8,30 @@ import java.net.http.HttpResponse;
 import java.time.Duration;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import java.util.Arrays;
 
 
 
 public class API {
-    public double setRequestMethod() {
+    public double setRequestMethod(Carga carga) {
+        String [] origem = carga.getOrigem().getNomeCidade().split(" ");
+        String [] destino =carga.getDestino().getNomeCidade().split(" ");
+
+        String resultado =  Arrays.stream(origem)
+                .reduce((s1, s2) -> s1 + "+" + s2)
+                .orElse("");
+        String resultado2 =  Arrays.stream(destino)
+                .reduce((s1, s2) -> s1 + "+" + s2)
+                .orElse("");
+
+
+        URI URL = URI.create("https://maps.googleapis.com/maps/api/directions/json?origin="+resultado+"&destination="+resultado2+"&key=AIzaSyCVdUBvL4qKPFp5XgGcYwW3P6OtlrqJ0i4");
+
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
           .GET()
           .timeout(Duration.ofSeconds(10))
-          .uri(URI.create("https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood&key=AIzaSyCVdUBvL4qKPFp5XgGcYwW3P6OtlrqJ0i4"))
+          .uri(URL)
           .build();
         
           HttpResponse<String> response;
@@ -34,6 +48,8 @@ public class API {
               JSONObject legsObject = legs.getJSONObject(0);
               JSONObject Distancedata = legsObject.getJSONObject("distance");
               Double meters = Distancedata.getDouble("value");
+
+              System.out.println(Distancedata.toString());
 
               return meters/1000;
           } catch (IOException e) {

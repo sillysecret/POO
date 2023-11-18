@@ -36,6 +36,12 @@ public class Carga{
         return tempoMaximoFrete;
     }
 
+    public Destino getDestino(){
+        return this.destino;
+    }
+    public Destino getOrigem(){
+        return this.origem;
+    }
     public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
