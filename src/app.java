@@ -9,11 +9,18 @@ public class app {
         new TipoCargaDuravel(1, "Carga durável", "Setor 1", "Material 1"), 
         cliente1, Situacoes.Pendente,new Destino( 1000,"São Paulo"),new Destino( 1000,"Rio de janeiro"));
 
-    
+
 
         Caminhao caminhao1 = new Caminhao("Caminhão 1", 100, 1000, 10, 1);
 
-        frete(caminhao1,carga1);
+        frotaCaminhoes frota = new frotaCaminhoes();
+        DestinosCad destinos = new DestinosCad();
+
+
+
+
+
+        //frete(caminhao1,carga1);
     }
 
     public static void frete(Caminhao caminhao, Carga carga) {
