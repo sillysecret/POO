@@ -4,7 +4,7 @@ public class TipoCargaPerecivel extends TipoCarga{
     public int tempoMaximo;
 
 
-    public TipoCargaPerecivel(int numero, String descricao,int tempoMaximo,String origem) {
+    public TipoCargaPerecivel(int numero, String descricao,int tempoMaximo) {
         super(numero, descricao);
         this.tempoMaximo = tempoMaximo;
         this.origem = origem;
