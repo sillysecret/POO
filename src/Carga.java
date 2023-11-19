@@ -1,6 +1,6 @@
 
 public class Carga{
-    private int codigo;
+    private Integer codigo;
     private int peso;
     private double valorDeclarado;
     private int tempoMaximoFrete;
@@ -23,8 +23,8 @@ public class Carga{
         this.origem=origem;
     }
 
-    public int getCodigo() {
-        return codigo;
+    public Integer getCodigo() {
+        return this.codigo;
     }
     public int getPeso() {
         return peso;
@@ -57,6 +57,14 @@ public class Carga{
 
     public TipoCarga getTipoCarga() {
        return this.carga;
+    }
+
+    public Situacoes getSituacao(){
+        return this.situacao;
+    }
+
+    public void setSituacao(Situacoes situacao) {
+        this.situacao = situacao;
     }
 
     public String toString() {
