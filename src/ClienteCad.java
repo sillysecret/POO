@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
 public class ClienteCad {
-    private ArrayList<Cliente> clientes;
+    public ArrayList<Cliente> clientes;
 
-    public  ClienteCad(){
+    public ClienteCad(){
         this.clientes = new ArrayList<>();
     }
 

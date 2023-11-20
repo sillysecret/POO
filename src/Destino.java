@@ -14,4 +14,8 @@ public class Destino {
     public String getNomeCidade() {
         return nomeCidade;
     }
+
+    public String toCSV() {
+        return this.cod+";"+this.nomeCidade;
+    }
 }

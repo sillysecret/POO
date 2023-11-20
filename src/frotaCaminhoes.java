@@ -3,7 +3,7 @@ import java.util.LinkedList;
 import java.util.Arrays;
 
 public class frotaCaminhoes {
-    private ArrayList<Caminhao> frota;
+    public ArrayList<Caminhao> frota;
 
     public frotaCaminhoes(){
         this.frota = new ArrayList<>();

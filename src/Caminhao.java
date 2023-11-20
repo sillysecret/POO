@@ -55,6 +55,10 @@ public class Caminhao {
         + "\nCusto por Km: " + custoPorKm
         + "\nCodigo: " + codigo;
     }
+
+    public String toCSV() {
+        return this.nome+";"+this.velocidade+";"+this.autonomia+";"+this.custoPorKm+";"+this.codigo;
+    }
     
     
 }

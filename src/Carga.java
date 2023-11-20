@@ -76,4 +76,8 @@ public class Carga{
         + "\nTipo da Carga: " + carga.toString();
     }
 
+    public String toCSV() {
+        return this.codigo+";"+ this.peso+";"+ this.valorDeclarado+";"+ this.tempoMaximoFrete+";"+ this.carga.toCSV()+";"+ this.cliente.toCSV()+";"+ this.situacao+";"+ this.destino.toCSV()+";"+ this.origem.toCSV();
+    }
+
 }

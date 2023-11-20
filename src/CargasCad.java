@@ -1,11 +1,17 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Comparator;
 
 public class CargasCad {
 
-    private ArrayList<Carga> cargas;
+    public ArrayList<Carga> cargas;
+    Queue<Carga> q;
 
-    public  CargasCad(){
-        this.cargas = new ArrayList<>();
+    public CargasCad(){
+        this.q = new LinkedList<Carga>();
+        this.cargas = new ArrayList<>(100);
     }
 
     public void add(Carga c){
@@ -13,8 +19,12 @@ public class CargasCad {
             System.out.println("ja cadastrado");
             return;
         }else{
+            if(c.getSituacao()!=Situacoes.Finalizada){
+                q.offer(c);
+            }
             cargas.add(c);
             sort(cargas);
+            return;
         }
     }
 

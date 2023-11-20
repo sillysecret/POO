@@ -1,27 +1,30 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.util.Arrays;
+import java.io.File;
+import java.util.ArrayList;
 
 public class app {
     public frotaCaminhoes frota = new frotaCaminhoes();
     public DestinosCad destinos = new DestinosCad();
     public ClienteCad clientes = new ClienteCad();
     public CargasCad cargas = new CargasCad();
-    public static void main(String[] args) {
 
-
-//        Cliente cliente1 = new Cliente(1, "João", "999999999");
-//        Cliente cliente2 = new Cliente(2, "Maria", "888888888");
-//
-//        Carga carga1 = new Carga(1, 100, 1000, 10,
-//        new TipoCargaDuravel(1, "Carga durável", "Setor 1", "Material 1"),
-//        cliente1, Situacoes.Pendente,new Destino( 1000,"São Paulo"),new Destino( 1000,"Rio de janeiro"));
-//
-//
-//
-//        Caminhao caminhao1 = new Caminhao("Caminhão 1", 100, 1000, 10, 1);
-//
-//         frete(caminhao1,carga1);
+    public app(){
+        executa();
     }
+    private void executa(){
+        cadastrarCliente(1, "Joao", "123");
+        cadastrarCliente(2, "Maria", "456");
+        cadastraLocal(1, "Porto Alegre");
+        cadastraLocal(2, "Sao Paulo");
+        cadastraCargaDuravel(1, 10, 100, 10, 1, "nome", "setor", "material", clientes.clientes.get(0), Situacoes.Pendente, destinos.destinos.get(0), destinos.destinos.get(1));
+        cadastraCargaPerecivel(2, 10, 100, 10, 1, "descricao", 10, clientes.clientes.get(1), Situacoes.Pendente, destinos.destinos.get(0), destinos.destinos.get(1));
+        cadastraCaminhao("nome", 10, 100, 10, 1);
 
+        saveContext();
+
+    }
     public static void frete(Caminhao caminhao, Carga carga) {
         //preco do peso da carga || carga.getTipoCarga().getPrecoPorPeso(carga.getPeso())
         //preco destino || caminhao.getCustoPorKm * new API().setRequestMethod(carga);
@@ -33,7 +36,42 @@ public class app {
         System.out.println((caminhao.getCustoPorKm() * new API().setRequestMethod(carga)) + (carga.getTipoCarga().getPrecoPorPeso(carga.getPeso())));
     }
 
-    public static void saveContext(){
+    public void saveContext(){
+        try{
+
+            File file = new File("save.txt");
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+            writer.write("Cargas\n");
+            for(Carga c : cargas.cargas){
+                writer.write(c.toCSV()+"\n");
+                System.out.println(c.toCSV());
+            }
+
+
+            writer.write("Caaminhões\n");
+            for(Caminhao c : frota.frota){
+                writer.write(c.toCSV()+"\n");
+                System.out.println(c.toCSV());
+            }
+
+
+            writer.write("Destinos\n");
+            for(Destino d : destinos.destinos){
+                writer.write(d.toCSV()+"\n");
+                System.out.println(d.toCSV());
+            }
+
+            writer.write("Clientes\n");
+            for(Cliente c :clientes.clientes){
+                writer.write(c.toCSV()+"\n");
+                System.out.println(c.toCSV());
+            }
+            writer.close();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
 
     }
 
@@ -60,5 +98,7 @@ public class app {
         Destino destino = new Destino(codigo, nomeCidade);
         this.destinos.add(destino);
     }
+
+
 
 }

@@ -1,8 +1,8 @@
 
 public abstract class TipoCarga {
 
-    private int numero;
-    private String descricao;
+    protected int numero;
+    protected String descricao;
 
     public TipoCarga(int numero, String descricao) {
         this.numero = numero;
@@ -16,6 +16,8 @@ public abstract class TipoCarga {
     }
 
     abstract public double getPrecoPorPeso(double peso);
+
+    abstract public String toCSV();
 }
 
 //Tipo de carga: possui numero e descrição (Perecível: possui uma origem (String) e um tempo máximo

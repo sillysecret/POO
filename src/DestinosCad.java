@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class DestinosCad {
-    private ArrayList<Destino> destinos;
+    public ArrayList<Destino> destinos;
 
     public DestinosCad(){
         this.destinos = new ArrayList<>();

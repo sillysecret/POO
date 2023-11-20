@@ -18,6 +18,8 @@ public class TipoCargaPerecivel extends TipoCarga{
         return peso*2;
     }
 
-
+    public String toCSV() {
+        return this.numero +";"+this.descricao + ";"+this.tempoMaximo;
+    }
     
 }

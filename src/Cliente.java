@@ -36,6 +36,10 @@ public class Cliente {
         + "\nNome: " + nome
         + "\nTelefone: " + telefone;
     }
+
+    public String toCSV() {
+        return this.cod+";"+this.nome+";"+this.telefone;
+    }
     
     
 }
