@@ -1,9 +1,10 @@
+
 public class TipoCargaPerecivel extends TipoCarga{
     public String origem;
     public int tempoMaximo;
 
 
-    public TipoCargaPerecivel(int numero, String descricao,int tempoMaximo,String origem) {
+    public TipoCargaPerecivel(int numero, String descricao,int tempoMaximo) {
         super(numero, descricao);
         this.tempoMaximo = tempoMaximo;
         this.origem = origem;
@@ -17,6 +18,8 @@ public class TipoCargaPerecivel extends TipoCarga{
         return peso*2;
     }
 
-
+    public String toCSV() {
+        return this.numero +";"+this.descricao + ";"+this.tempoMaximo;
+    }
     
 }

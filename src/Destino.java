@@ -1,5 +1,6 @@
+
 public class Destino {
-    private int cod;
+    private Integer cod;
     private String nomeCidade;
 
     public Destino(int cod, String nomeCidade) {
@@ -7,10 +8,14 @@ public class Destino {
         this.nomeCidade = nomeCidade;
     }
 
-    public int getCod() {
+    public Integer getCod() {
         return cod;
     }
     public String getNomeCidade() {
         return nomeCidade;
+    }
+
+    public String toCSV() {
+        return this.cod+";"+this.nomeCidade;
     }
 }

@@ -1,5 +1,6 @@
+
 public class Cliente {
-    private int cod;
+    private Integer cod;
     private String nome;
     private String telefone;
 
@@ -9,7 +10,7 @@ public class Cliente {
         this.telefone = telefone;
     }
 
-    public int getCod() {
+    public Integer getCod() {
         return cod;
     }
     public String getNome() {
@@ -34,6 +35,10 @@ public class Cliente {
         + "\nCod: " + cod
         + "\nNome: " + nome
         + "\nTelefone: " + telefone;
+    }
+
+    public String toCSV() {
+        return this.cod+";"+this.nome+";"+this.telefone;
     }
     
     

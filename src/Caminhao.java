@@ -1,3 +1,4 @@
+
 public class Caminhao {
     private String nome;
     private double velocidade;
@@ -53,6 +54,10 @@ public class Caminhao {
         + "\nAutonomia: " + autonomia
         + "\nCusto por Km: " + custoPorKm
         + "\nCodigo: " + codigo;
+    }
+
+    public String toCSV() {
+        return this.nome+";"+this.velocidade+";"+this.autonomia+";"+this.custoPorKm+";"+this.codigo;
     }
     
     

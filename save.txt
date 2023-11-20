@@ -1,0 +1,11 @@
+Cargas
+1;10;100.0;10;1;nome;setor;material;1;Joao;123;Pendente;1;Porto Alegre;2;Sao Paulo
+2;10;100.0;10;1;descricao;10;2;Maria;456;Pendente;1;Porto Alegre;2;Sao Paulo
+Caaminhões
+nome;10.0;100.0;10.0;1
+Destinos
+1;Porto Alegre
+2;Sao Paulo
+Clientes
+1;Joao;123
+2;Maria;456

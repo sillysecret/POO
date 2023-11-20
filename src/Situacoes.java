@@ -1,3 +1,4 @@
+
 public enum Situacoes {
     Pendente, 
     Locada, 
