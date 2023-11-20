@@ -20,7 +20,18 @@ public class frotaCaminhoes {
 
 
 
+
     }
+    public Caminhao searchCaminhao(Integer codigo){
+        for(Caminhao c : frota){
+            if(c.getCodigo()==codigo){
+                return c;
+            }
+        }
+        System.out.println("Caminhao não encontrado");
+        return null;
+    }
+
     private void sort(ArrayList<Caminhao> frota) {
         frota.sort((o1, o2) -> o1.getNome().compareTo(o2.getNome()));
     }

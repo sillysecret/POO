@@ -1,7 +1,7 @@
 
 public class TipoCargaDuravel extends TipoCarga {
 //Durável: que possui um setor (String) e o material principal (String)
-
+private static final String idTipo = "Duravel";
     private String setor;
     private String materialPrincipal;
 
@@ -17,6 +17,6 @@ public class TipoCargaDuravel extends TipoCarga {
     }
 
     public String toCSV() {
-        return this.numero+";"+this.descricao+";"+this.setor+";"+this.materialPrincipal;
+        return this.numero+";"+this.descricao+";"+this.setor+";"+this.materialPrincipal+";"+this.idTipo;
     }
 }
