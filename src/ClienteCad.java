@@ -16,6 +16,16 @@ public class ClienteCad {
             sort(clientes);
         }
     }
+
+    public Cliente serchCliente(Integer cod){
+        for(Cliente c : clientes){
+            if(c.getCod()==cod){
+                return c;
+            }
+        }
+        System.out.println("Cliente não encontrado");
+        return  null;
+    }
     private void sort(ArrayList<Cliente> Clientes) {
         Clientes.sort((o1, o2) -> o1.getCod().compareTo(o2.getCod()));
     }

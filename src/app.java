@@ -1,5 +1,7 @@
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.nio.Buffer;
 import java.util.Arrays;
 import java.io.File;
 import java.util.ArrayList;
@@ -14,6 +16,9 @@ public class app {
         executa();
     }
     private void executa(){
+        cadastraLocal(1, "Sao jeronimo");
+
+
         cadastrarCliente(1, "Joao", "123");
         cadastrarCliente(2, "Maria", "456");
         cadastraLocal(1, "Porto Alegre");
@@ -21,9 +26,23 @@ public class app {
         cadastraCargaDuravel(1, 10, 100, 10, 1, "nome", "setor", "material", clientes.clientes.get(0), Situacoes.Pendente, destinos.destinos.get(0), destinos.destinos.get(1));
         cadastraCargaPerecivel(2, 10, 100, 10, 1, "descricao", 10, clientes.clientes.get(1), Situacoes.Pendente, destinos.destinos.get(0), destinos.destinos.get(1));
         cadastraCaminhao("nome", 10, 100, 10, 1);
+        cadastraLocal(1, "Triunfo");
 
         saveContext();
 
+         frota = new frotaCaminhoes();
+         destinos = new DestinosCad();
+         clientes = new ClienteCad();
+         cargas = new CargasCad();
+
+
+         loadContext();
+         saveContext();
+
+
+
+
+        //frete(frota.frota.get(0), cargas.cargas.get(0));
     }
     public static void frete(Caminhao caminhao, Carga carga) {
         //preco do peso da carga || carga.getTipoCarga().getPrecoPorPeso(carga.getPeso())
@@ -42,39 +61,75 @@ public class app {
             File file = new File("save.txt");
 
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-            writer.write("Cargas\n");
-            for(Carga c : cargas.cargas){
-                writer.write(c.toCSV()+"\n");
-                System.out.println(c.toCSV());
-            }
 
 
-            writer.write("Caaminhões\n");
+
+
+
             for(Caminhao c : frota.frota){
-                writer.write(c.toCSV()+"\n");
+                writer.write("caminhao;"+c.toCSV()+"\n");
                 System.out.println(c.toCSV());
             }
 
 
-            writer.write("Destinos\n");
+
             for(Destino d : destinos.destinos){
-                writer.write(d.toCSV()+"\n");
+                writer.write("destino;"+d.toCSV()+"\n");
                 System.out.println(d.toCSV());
             }
 
-            writer.write("Clientes\n");
+
             for(Cliente c :clientes.clientes){
-                writer.write(c.toCSV()+"\n");
+                writer.write("cliente;"+c.toCSV()+"\n");
+                System.out.println(c.toCSV());
+            }
+
+
+            for(Carga c : cargas.cargas){
+                writer.write("carga;"+c.toCSV()+"\n");
                 System.out.println(c.toCSV());
             }
             writer.close();
-
         } catch (Exception e) {
             System.out.println(e);
         }
 
     }
 
+    public void loadContext(){
+        try {
+            String linha;
+            File file = new File("save.txt");
+            BufferedReader reader = new BufferedReader(new java.io.FileReader(file));
+            while((linha = reader.readLine()) !=null){
+                String [] dados = linha.split(";");
+                System.out.println(Arrays.toString(dados));
+
+                if (dados[0].equals("caminhao")){
+                    cadastraCaminhao(dados[1], (int) Double.parseDouble(dados[2]), Double.parseDouble(dados[3]),(int)Double.parseDouble(dados[4]), (int)Double.parseDouble(dados[5]));
+                }
+
+                if (dados[0].equals("destino")){
+                    cadastraLocal((int) Double.parseDouble(dados[1]), dados[2]);
+                }
+
+                if(dados[0].equals("cliente")){
+                    cadastrarCliente((int) Double.parseDouble(dados[1]), dados[2], dados[3]);
+                }
+
+                if(dados[0].equals("carga")){
+                    if(dados[8].equals("Perecivel")){
+                            cadastraCargaPerecivel((int) Double.parseDouble(dados[1]), (int) Double.parseDouble(dados[2]), Double.parseDouble(dados[3]), (int) Double.parseDouble(dados[4]), (int) Double.parseDouble(dados[5]), dados[6], (int) Double.parseDouble(dados[7]), clientes.serchCliente(Integer.parseInt(dados[9])), Situacoes.valueOf(dados[12]), destinos.serchDestino(Integer.parseInt(dados[13])), destinos.serchDestino(Integer.parseInt(dados[15])));
+                   }else{
+                            cadastraCargaDuravel((int) Double.parseDouble(dados[1]), (int) Double.parseDouble(dados[2]), Double.parseDouble(dados[3]), (int) Double.parseDouble(dados[4]), (int) Double.parseDouble(dados[5]), dados[6], dados[7], dados[8], clientes.serchCliente(Integer.parseInt(dados[10])), Situacoes.valueOf(dados[13]), destinos.serchDestino(Integer.parseInt(dados[14])), destinos.serchDestino(Integer.parseInt(dados[16])));
+                    }
+                }
+            }
+
+        }catch (Exception e) {
+            System.out.println(e);
+        }
+    }
     public void cadastrarCliente(Integer codigo, String nome, String telefone) {
         Cliente cliente = new Cliente(codigo, nome, telefone);
         this.clientes.add(cliente);

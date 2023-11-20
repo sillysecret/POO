@@ -16,6 +16,17 @@ public class DestinosCad {
             sort(destinos);
         }
     }
+
+    public Destino serchDestino(Integer cod){
+        for(Destino d : destinos){
+            if(d.getCod()==cod){
+
+                return d;
+            }
+        }
+        System.out.println("Destino não encontrado");
+        return null;
+    }
     private void sort(ArrayList<Destino> Destinos) {
         Destinos.sort((o1, o2) -> o1.getCod().compareTo(o2.getCod()));
     }
