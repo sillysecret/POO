@@ -7,6 +7,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 public class app {
+
     public frotaCaminhoes frota = new frotaCaminhoes();
     public DestinosCad destinos = new DestinosCad();
     public ClienteCad clientes = new ClienteCad();
@@ -103,7 +104,7 @@ public class app {
             BufferedReader reader = new BufferedReader(new java.io.FileReader(file));
             while((linha = reader.readLine()) !=null){
                 String [] dados = linha.split(";");
-                System.out.println(Arrays.toString(dados));
+
 
                 if (dados[0].equals("caminhao")){
                     cadastraCaminhao(dados[1], (int) Double.parseDouble(dados[2]), Double.parseDouble(dados[3]),(int)Double.parseDouble(dados[4]), (int)Double.parseDouble(dados[5]));
