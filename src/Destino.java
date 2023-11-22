@@ -15,6 +15,11 @@ public class Destino {
         return nomeCidade;
     }
 
+    public String toString() {
+        return "\nInformações do destino: "
+        + "\nCod: " + cod
+        + "\nNome da cidade: " + nomeCidade;
+    }
     public String toCSV() {
         return this.cod+";"+this.nomeCidade;
     }

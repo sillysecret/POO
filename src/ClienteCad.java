@@ -8,13 +8,17 @@ public class ClienteCad {
     }
 
     public void add(Cliente c){
-        if(clientes.contains(c)){
-            System.out.println("ja cadastrado");
-            return;
-        }else{
+        for (Cliente cliente : clientes) {
+            if(cliente.getCod()==c.getCod()){
+
+                throw new IllegalArgumentException("Cliente já cadastrado");
+
+            }
+        }
+
             clientes.add(c);
             sort(clientes);
-        }
+
     }
 
     public Cliente serchCliente(Integer cod){
@@ -30,4 +34,11 @@ public class ClienteCad {
         Clientes.sort((o1, o2) -> o1.getCod().compareTo(o2.getCod()));
     }
 
+    public String[] getClientesString(){
+        String[] clientesString = new String[clientes.size()];
+        for(int i = 0; i < clientes.size(); i++){
+            clientesString[i] = clientes.get(i).toString();
+        }
+        return clientesString;
+    }
 }

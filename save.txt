@@ -5,5 +5,4 @@ destino;1;Triunfo
 destino;2;Sao Paulo
 cliente;1;Joao;123
 cliente;2;Maria;456
-carga;1;10;100.0;10;1;nome;setor;material;Duravel;1;Joao;123;Pendente;1;Sao jeronimo;1;Sao jeronimo
 carga;2;10;100.0;10;1;descricao;10;Perecivel;2;Maria;456;Pendente;1;Sao jeronimo;1;Sao jeronimo

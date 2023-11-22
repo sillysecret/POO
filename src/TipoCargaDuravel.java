@@ -19,4 +19,10 @@ private static final String idTipo = "Duravel";
     public String toCSV() {
         return this.numero+";"+this.descricao+";"+this.setor+";"+this.materialPrincipal+";"+this.idTipo;
     }
+
+    public String toString() {
+        return super.toString()
+        + "\nSetor: " + setor
+        + "\nMaterial principal: " + materialPrincipal;
+    }
 }

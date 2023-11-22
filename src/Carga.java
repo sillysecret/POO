@@ -67,14 +67,17 @@ public class Carga{
         this.situacao = situacao;
     }
 
-    public String toString() {
-        return "\nInformações da carga:" 
-        + "\nCódigo: " + codigo
-        + "\nPeso: " + peso 
+    public String toString(){
+        return "\nInformações da carga: "
+        + "\nCodigo: " + codigo
+        + "\nPeso: " + peso
         + "\nValor declarado: " + valorDeclarado
-        + "\nTempo Maximo: " + tempoMaximoFrete
-        + "\nTipo da Carga: " + carga.toString();
-
+        + "\nTempo maximo de frete: " + tempoMaximoFrete
+        + "\nTipo de carga: " + carga.toString()
+        + "\nCliente: " + cliente.toString()
+        + "\nSituacao: " + situacao.ordinal()
+        + "\nDestino: " + destino.toString()
+        + "\nOrigem: " + origem.toString();
     }
 
     public String toCSV() {

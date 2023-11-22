@@ -22,5 +22,9 @@ public class TipoCargaPerecivel extends TipoCarga{
     public String toCSV() {
         return this.numero +";"+this.descricao + ";"+ this.tempoMaximo+";"+this.idTipo;
     }
-    
+
+    public String toString() {
+        return super.toString()
+        + "\nTempo máximo: " + tempoMaximo;
+    }
 }

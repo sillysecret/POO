@@ -12,7 +12,7 @@ public class frotaCaminhoes {
     public void add(Caminhao c){
         if(frota.contains(c)){
             System.out.println("ja cadastrado");
-            return;
+            throw new IllegalArgumentException("Carga já cadastrada");
         }else{
             frota.add(c);
             sort(frota);
@@ -36,6 +36,12 @@ public class frotaCaminhoes {
         frota.sort((o1, o2) -> o1.getNome().compareTo(o2.getNome()));
     }
 
-
+    public String[] getFrotaString(){
+        String[] frotaString = new String[frota.size()];
+        for(int i = 0; i < frota.size(); i++){
+            frotaString[i] = frota.get(i).toString();
+        }
+        return frotaString;
+    }
 
 }

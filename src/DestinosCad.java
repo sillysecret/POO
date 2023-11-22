@@ -8,13 +8,16 @@ public class DestinosCad {
     }
 
     public void add(Destino d){
-        if(destinos.contains(d)){
-            System.out.println("ja cadastrado");
-            return;
-        }else{
-            destinos.add(d);
-            sort(destinos);
+        for (Destino destino : destinos) {
+            if (destino.getCod() == d.getCod()) {
+                throw new IllegalArgumentException("Carga já cadastrada");
+
+            }
         }
+
+        destinos.add(d);
+        sort(destinos);
+
     }
 
     public Destino serchDestino(Integer cod){
@@ -31,5 +34,12 @@ public class DestinosCad {
         Destinos.sort((o1, o2) -> o1.getCod().compareTo(o2.getCod()));
     }
 
+    public String[] getDestinosString(){
+        String[] destinosString = new String[destinos.size()];
+        for(int i = 0; i < destinos.size(); i++){
+            destinosString[i] = destinos.get(i).toString();
+        }
+        return destinosString;
+    }
 
 }
