@@ -454,7 +454,7 @@ public class app {
         frete.add(btnVoltar7);
         printaCargas.add(btnVoltar8);
         printaClientes.add(btnVoltar9);
-        printaDestino.add(btnVoltar10);
+        printaDestino.add(btnVoltar11);
         printaCaminha.add(btnVoltar10);
 
 
@@ -622,7 +622,11 @@ public class app {
                         cardLayout.show(panelPrincipal, "Menu");
 
                     });
+                    btnVoltar11.addActionListener(e -> {
 
+                        cardLayout.show(panelPrincipal, "Menu");
+
+                    });
 
                     //Configurando a ação do botão de voltar
 

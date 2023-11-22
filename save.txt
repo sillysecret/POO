@@ -1,8 +1,6 @@
 caminhao;nome;10.0;100.0;10.0;1
 destino;1;Sao jeronimo
-destino;1;Porto Alegre
-destino;1;Triunfo
 destino;2;Sao Paulo
 cliente;1;Joao;123
 cliente;2;Maria;456
-carga;2;10;100.0;10;1;descricao;10;Perecivel;2;Maria;456;Pendente;1;Sao jeronimo;1;Sao jeronimo
+carga;2;10;100.0;10;1;descricao;10;Perecivel;2;Maria;456;Pendente;1;Sao jeronimo;2;Sao Paulo
