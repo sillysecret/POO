@@ -74,6 +74,7 @@ public class Carga{
         + "\nValor declarado: " + valorDeclarado
         + "\nTempo Maximo: " + tempoMaximoFrete
         + "\nTipo da Carga: " + carga.toString();
+
     }
 
     public String toCSV() {
