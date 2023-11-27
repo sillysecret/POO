@@ -25,7 +25,7 @@ public class API {
                 .orElse("");
 
 
-        URI URL = URI.create("https://maps.googleapis.com/maps/api/directions/json?origin="+resultado+"&destination="+resultado2+"&key=AIzaSyCVdUBvL4qKPFp5XgGcYwW3P6OtlrqJ0i4");
+        URI URL = URI.create("https://maps.googleapis.com/maps/api/directions/json?origin="+resultado+"&destination="+resultado2+"&key=SUAKEYAKI");
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
